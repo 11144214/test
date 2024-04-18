@@ -1,0 +1,71 @@
+/* Basic styles */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header, nav, main, footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  header h1, nav ul, main section {
+    margin: 0;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #f0f0f0;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  /* Navigation Styles */
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav li {
+    margin-right: 1rem;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: black;
+  }
+  
+/* Main Content Styles */
+main {
+    display: flex; /* Change to flexbox for row layout */
+    flex-wrap: wrap; /* Allow sections to wrap to next line if needed */
+  }
+  
+  section {
+    margin: 0.5rem; /* Reduce margin for closer spacing */
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: calc(100% / 3 - 1rem); /* Set width based on desired columns */
+  }
+  
+  section h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .photo img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: #f0f0f0;
+    text-align: center;
+  }
+  
