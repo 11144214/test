@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+  }
+  
+  p {
+    font-size: 0.8em;
+    color: #888;
+  }
+  
+  nav {
+    background-color: #e0e0e0;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .experience-entry {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .experience-entry h3 {
+    font-size: 1em;
+    margin-bottom: 5px;
+  }
+  
+  .experience-entry h4 {
+    font-size: 0.9em;
+    margin-bottom: 3px;
+  }
+  
+  .skills-list {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .skills-list li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+  }
+  .circular-progress {
+    --size: 100px;
+    --half-size: calc(var(--size) / 2);
+    --stroke-width: 20px;
+    --radius: calc((var(--size) - var(--stroke-width)) / 2);
+    --circumference: calc(var(--radius) * pi * 2);
+    --dash: calc((var(--progress) * var(--circumference)) / 100);
+    animation: progress-animation 0.5s linear 0s 1 forwards;
+  }
+  
+  .circular-progress circle {
+    cx: var(--half-size);
+    cy: var(--half-size);
+    r: var(--radius);
+    stroke-width: var(--stroke-width);
+    fill: none;
+    stroke-linecap: round;
+  }
+  
+  .circular-progress circle.bg {
+    stroke: #ddd;
+  }
+  
+  .circular-progress circle.fg {
+    transform: rotate(-90deg);
+    transform-origin: var(--half-size) var(--half-size);
+    stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
+    transition: stroke-dasharray 0.3s linear 0s;
+    stroke: #5394fd;
+  }
+  
+  @property --progress {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 0;
+  }
+  
+  @keyframes progress-animation {
+    from {
+      --progress: 0;
+    }
+    to {
+      --progress: 50;
+    }
+  }
