@@ -1,71 +1,190 @@
-/* Basic styles */
 body {
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
+
   }
-  
-  header, nav, main, footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-  }
-  
-  header h1, nav ul, main section {
-    margin: 0;
-  }
-  
-  /* Header Styles */
-  header {
-    background-color: #f0f0f0;
-  }
-  
-  header h1 {
-    font-size: 2rem;
-  }
-  
-  /* Navigation Styles */
-  nav ul {
-    list-style: none;
-    display: flex;
-  }
-  
-  nav li {
-    margin-right: 1rem;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: black;
-  }
-  
-/* Main Content Styles */
-main {
-    display: flex; /* Change to flexbox for row layout */
-    flex-wrap: wrap; /* Allow sections to wrap to next line if needed */
-  }
-  
-  section {
-    margin: 0.5rem; /* Reduce margin for closer spacing */
-    padding: 1rem;
-    border: 1px solid #ddd;
+
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
     border-radius: 5px;
-    width: calc(100% / 3 - 1rem); /* Set width based on desired columns */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+      text-align: center;
+      color: #333;
+  }
+
+  h2, h3 {
+    margin-bottom: 20px;
+    color: #333;
   }
   
-  section h2 {
-    margin-bottom: 1rem;
+  @font-face {
+  font-family: 'NotoSerifTC';
+  src: url('./fonts/NotoSerifTC-Regular.otf') format('opentype');
   }
-  
-  .photo img {
-    width: 100%;
-    height: auto;
+
+
+  p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    text-indent: 5px;
+    letter-spacing: 2px;
+    font-family: 'NotoSerifTC', serif;
+
   }
-  
-  /* Footer Styles */
-  footer {
-    background-color: #f0f0f0;
-    text-align: center;
+
+  .section-title {
+    margin-bottom: 10px;
+    color: #007bff;
   }
-  
+
+  .exp-title {
+    font-weight: bold;
+  }
+
+  .date {
+    color: #777;
+  }
+
+  .skills {
+    list-style: none;
+    padding: 0;
+  }
+
+  .skills li {
+    display: inline-block;
+    background-color: #381c46;
+    color: #fff;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border-radius: 3px;
+  }
+
+  .education, .experience {
+    margin-bottom: 30px;
+  }
+
+  .contact {
+    margin-top: 30px;
+  }
+
+  .contact a {
+    display: inline-block;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+
+
+
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  }
+
+    .menu {
+      background-color: #333;
+      padding: 10px;
+      color: #fff;
+    }
+
+    .menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu ul li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .menu ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px;
+    }
+
+    .column {
+      float: left;
+      width: 24%;
+  }
+
+  .column img {
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 20%;
+  padding: 5px;
+
+  }
+  .section:after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+
+  .contact a {
+    margin-right: 100px;
+  }
+  .contact a:last-child {
+      margin-right: 0;
+  }
+
+  .circular-progress {
+  --size: 100px;
+  --half-size: calc(var(--size) / 2);
+  --stroke-width: 20px;
+  --radius: calc((var(--size) - var(--stroke-width)) / 2);
+  --circumference: calc(var(--radius) * pi * 2);
+  --dash: calc((var(--progress) * var(--circumference)) / 100);
+  animation: progress-animation 0.5s linear 0s 1 forwards;
+}
+
+
+.circular-progress circle {
+
+  cx: var(--half-size);
+  cy: var(--half-size);
+  r: var(--radius);
+  stroke-width: var(--stroke-width);
+  fill: none;
+  stroke-linecap: round;
+
+}
+
+.circular-progress circle.bg {
+  stroke: #ddd;
+}
+
+.circular-progress circle.fg {
+  transform: rotate(-90deg);
+  transform-origin: var(--half-size) var(--half-size);
+  stroke-dasharray: var(--dash) calc(var(--circumference) - var(--dash));
+  transition: stroke-dasharray 0.3s linear 0s;
+  stroke: #5394fd;
+}
+
+@property --progress {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@keyframes progress-animation {
+  from {
+    --progress: 0;
+  }
+  to {
+    --progress: 60;
+  }
+}
+
